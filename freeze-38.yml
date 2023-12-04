@@ -1,0 +1,12 @@
+name: ol38
+channels:
+  - conda-forge
+  - defaults
+  - conda-forge/label/broken
+dependencies:
+  - python=3.8
+  - geopandas
+  - ca-certificates
+  - openssl
+  - pyarrow
+  - certifi
