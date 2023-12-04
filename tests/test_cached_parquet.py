@@ -12,7 +12,6 @@ def _tmp_loc():
 
 
 def clear_folder(tmp_path=_tmp_loc()):
-    # tmp_path = _tmp_loc()
     for filename in listdir(tmp_path):
         file_path = path.join(tmp_path, filename)
         unlink(file_path)
@@ -36,6 +35,7 @@ class TestIngestions(TestCase):
         clear_folder()
         self.assertTrue(path.exists(self.tmp_location))
 
+        # Without the parentheses
         @cached_parquet
         def get_df():
             from pandas import DataFrame
@@ -94,7 +94,7 @@ class TestIngestions(TestCase):
             from pandas import DataFrame
             return DataFrame(self.data)
 
-        df = get_df()
+        _df = get_df()
 
         files = listdir(_tmp_loc())
         self.assertEqual(1, len(files))
@@ -109,7 +109,7 @@ class TestIngestions(TestCase):
             from pandas import DataFrame
             return DataFrame(self.data)
 
-        df = get_df(tmp_prefix=test_prefix)
+        _df = get_df(tmp_prefix=test_prefix)
 
         files = listdir(_tmp_loc())
         self.assertEqual(1, len(files))

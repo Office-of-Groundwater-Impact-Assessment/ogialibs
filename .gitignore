@@ -112,4 +112,3 @@ venv.bak/
 
 # data folder
 /data
-!/data/sales_data.csv

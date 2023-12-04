@@ -10,3 +10,4 @@ dependencies:
   - openssl
   - pyarrow
   - certifi
+  - pylint
