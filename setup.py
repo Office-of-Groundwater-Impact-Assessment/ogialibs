@@ -1,14 +1,11 @@
 #!/usr/bin/env python
 from setuptools import find_packages, setup
 import versioneer
-# import ogialibs._version as versioneer
 
 
 setup(
     name='ogialibs',
     version=versioneer.get_version(),
-    # version=versioneer.get_versions()['version'],
-    # cmdclass=versioneer.get_cmdclass(),
     url='https://github.com/Office-of-Groundwater-Impact-Assessment/ogialibs/',
     description=(
         "Common Python methods for OGIA"
@@ -19,7 +16,6 @@ setup(
     install_requires=[
         'geopandas>=0.13',
         'pyarrow',
-        # 'versioneer',
     ],
     classifiers=[
         'Intended Audience :: Developers',
