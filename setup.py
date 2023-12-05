@@ -1,10 +1,12 @@
 #!/usr/bin/env python
 from setuptools import find_packages, setup
+import versioneer
 
 
 setup(
     name='ogialibs',
-    version="0.0.1",
+    version=versioneer.get_version(),
+    cmdclass=versioneer.get_cmdclass(),
     url='https://github.com/Office-of-Groundwater-Impact-Assessment/ogialibs/',
     description=(
         "Common Python methods for OGIA"
@@ -17,7 +19,6 @@ setup(
         'pyarrow'
     ],
     classifiers=[
-        'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
         'Programming Language :: Python',
         'Programming Language :: Python :: 3',

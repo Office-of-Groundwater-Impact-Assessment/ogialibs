@@ -22,3 +22,12 @@ jobs:
       - name: Unit Tests
         shell: pwsh
         run: python -m unittest discover tests -v
+      - name: Versioneer Install
+        shell: pwsh
+        run: pip install versioneer
+      - name: Versioneer Setup
+        shell: pwsh
+        run: versioneer install --no-vendor
+      - name: Check Install
+        shell: pwsh
+        run: pip install .

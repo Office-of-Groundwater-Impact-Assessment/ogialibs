@@ -4,11 +4,11 @@ from unittest import TestCase
 from pathlib import Path
 from os import path, listdir, unlink
 
-from data import cached_parquet
+from ogialibs.data import cached_parquet
 
 
 def _tmp_loc():
-    from data import TMP_LOCATION
+    from ogialibs.data import TMP_LOCATION
     return TMP_LOCATION
 
 
