@@ -7,7 +7,7 @@ from unittest import TestCase
 from pathlib import Path
 from os import path, listdir, unlink
 
-from data import cached_parquet
+from src.data import cached_parquet
 
 
 def _tmp_loc():
