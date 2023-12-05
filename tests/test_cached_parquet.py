@@ -11,7 +11,7 @@ from src.data import cached_parquet
 
 
 def _tmp_loc():
-    from data import TMP_LOCATION
+    from src.data import TMP_LOCATION
     return TMP_LOCATION
 
 
