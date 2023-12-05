@@ -4,6 +4,18 @@ Some commonly used python libraries.
 
 ---
 
+## Installation
+
+Use the url of this repository for directly installing via pip
+
+```msdos
+pip install git+https://github.com/Office-of-Groundwater-Impact-Assessment/ogialibs
+```
+
+
+
+
+
 ## Local Development Environment Setup
 
 Here are the steps to set up a workstation for running the code and working on this project
