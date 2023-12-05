@@ -6,6 +6,7 @@ import versioneer
 setup(
     name='ogialibs',
     version=versioneer.get_version(),
+    cmdclass=versioneer.get_cmdclass(),
     url='https://github.com/Office-of-Groundwater-Impact-Assessment/ogialibs/',
     description=(
         "Common Python methods for OGIA"
