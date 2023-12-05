@@ -112,6 +112,3 @@ venv.bak/
 
 # data folder
 /data
-
-# versioneer artifacts
-_version.py
