@@ -7,7 +7,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest, windows-latest]
-        python-version: ["3.8"]
+        env_file: ["freeze-38.yml"]
     steps:
       - uses: actions/checkout@v3
         with:
@@ -15,8 +15,7 @@ jobs:
       - uses: conda-incubator/setup-miniconda@v2
         with:
           auto-update-conda: true
-          python-version: ${{ matrix.python-version }}
-          environment-file: freeze-38.yml
+          environment-file: ${{ matrix.env_file }}
       - name: Conda info
         shell: bash -l {0}
         run: conda info

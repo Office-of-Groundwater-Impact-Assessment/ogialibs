@@ -2,10 +2,6 @@ from hashlib import sha1
 from os.path import exists as path_exists
 from pathlib import Path
 from traceback import print_exc
-from typing import Any
-
-from pandas import read_parquet
-import geopandas as gpd
 import pandas
 
 TMP_LOCATION = "data"
