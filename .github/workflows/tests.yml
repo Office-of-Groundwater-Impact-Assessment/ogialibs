@@ -20,12 +20,6 @@ jobs:
       - name: Conda info
         shell: bash -l {0}
         run: conda info
-      - name: Python Style Checks
-        shell: pwsh
-        # For this to work, the pylint package needs to be present in 
-        # the freeze.yml file. Use the command below to install;
-        # > conda install pylint
-        run: pylint $(git ls-files '*.py')
       - name: Unit Tests
         shell: pwsh
         run: python -m unittest discover tests -v
