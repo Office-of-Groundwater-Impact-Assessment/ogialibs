@@ -1,17 +1,14 @@
-import sys
-
-sys.path.append('../src')
 
 from unittest import TestCase
 
 from pathlib import Path
 from os import path, listdir, unlink
 
-from src.data import cached_parquet
+from data import cached_parquet
 
 
 def _tmp_loc():
-    from src.data import TMP_LOCATION
+    from data import TMP_LOCATION
     return TMP_LOCATION
 
 
