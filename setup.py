@@ -16,7 +16,8 @@ setup(
     include_package_data=True,
     install_requires=[
         'geopandas>=0.13',
-        'pyarrow'
+        'pyarrow',
+        'versioneer',
     ],
     classifiers=[
         'Intended Audience :: Developers',
