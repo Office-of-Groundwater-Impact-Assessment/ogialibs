@@ -1,8 +1,12 @@
+import sys
+
+sys.path.append('../src')
+
 from unittest import TestCase
 
 from pathlib import Path
-from os import path, remove, listdir, unlink
-from glob import glob
+from os import path, listdir, unlink
+
 from data import cached_parquet
 
 
