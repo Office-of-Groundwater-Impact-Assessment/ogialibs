@@ -24,12 +24,11 @@ def cached_parquet(*args, **kwargs):
     def decorator(func):
         def wrapper(*f_args, **f_kwargs):
             # Check if already accessed & return
-            prefix = kwargs.pop('tmp_prefix', 'tmp')
+            prefix = kwargs.get('tmp_prefix', 'tmp')
             prefix = f_kwargs.pop('tmp_prefix', prefix)
 
-            pqlib = kwargs.pop('dflib', pandas)
+            pqlib = kwargs.get('dflib', pandas)
 
-            # prefix = tmp_prefix or ''
             args_str = func.__name__ + ''.join(map(str, args)) + str(kwargs)
             file_hash = sha1(args_str.encode("UTF-8")).hexdigest()[:16]
             tmp_loc = f"{TMP_LOCATION}/{prefix}_{file_hash}.parquet"

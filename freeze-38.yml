@@ -5,10 +5,8 @@ channels:
   - conda-forge/label/broken
 dependencies:
   - python=3.8
-  - geopandas
-  - ca-certificates
-  - openssl
-  - pyarrow
-  - certifi
-  - pylint
-  - versioneer
+  - pip:
+    - geopandas
+    - pyarrow
+    - pylint
+    - versioneer

@@ -1,4 +1,3 @@
-
 from unittest import TestCase
 
 from pathlib import Path
@@ -120,12 +119,12 @@ class TestIngestions(TestCase):
         import geopandas as gpd
 
         @cached_parquet(dflib=gpd)
-        def get_gdf():
+        def get_gdf(city_name):
             from pandas import DataFrame
             from shapely.geometry import Point
             df = DataFrame(
                 {
-                    'City': ['London', 'Paris', 'Berlin'],
+                    'City': ['London', 'Paris', city_name],
                     'Country': ['England', 'France', 'Germany'],
                     'Latitude': [51.5074, 48.8566, 52.5200],
                     'Longitude': [-0.1278, 2.3522, 13.4050]
@@ -136,7 +135,7 @@ class TestIngestions(TestCase):
             return gpd.GeoDataFrame(df, geometry='Coordinates')
 
         clear_folder()
-        gdf = get_gdf()
+        gdf = get_gdf('Berlin')
         self.assertIsInstance(gdf, gpd.GeoDataFrame)
 
         tmp_path = _tmp_loc()
@@ -144,3 +143,8 @@ class TestIngestions(TestCase):
         self.assertEqual(1, len(files))
         gen_gdf = gpd.read_parquet(path.join(tmp_path, files[0]))
         self.assertIsInstance(gen_gdf, gpd.GeoDataFrame)
+
+        # Returns second time
+        del gdf
+        gdf = get_gdf('Berlin')
+        self.assertIsInstance(gdf, gpd.GeoDataFrame)
