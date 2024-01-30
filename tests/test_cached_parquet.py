@@ -78,6 +78,18 @@ class TestIngestions(TestCase):
         foo = get_df(extra_col_value=test_val)
         self.assertEqual(list(foo.extra), [test_val for _ in self.data['Age']])
 
+        # Generates new file for different value
+        new_val = 9
+        bar = get_df(extra_col_value=new_val)
+        self.assertEqual([new_val for _ in self.data['Age']], list(bar.extra))
+        files = listdir(_tmp_loc())
+        expected_files = [
+            'Pickle file',
+            'First parquet file',
+            'Second parquet file'
+        ]
+        self.assertEqual(len(expected_files), len(files))
+
         # Still returns when source file is unavailable
         file_to_rem = Path(pickle_loc)
         file_to_rem.unlink()

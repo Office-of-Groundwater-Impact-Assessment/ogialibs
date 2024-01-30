@@ -29,7 +29,7 @@ def cached_parquet(*args, **kwargs):
 
             pqlib = kwargs.get('dflib', pandas)
 
-            args_str = func.__name__ + ''.join(map(str, args)) + str(kwargs)
+            args_str = func.__name__ + ''.join(map(str, f_args)) + str(f_kwargs)
             file_hash = sha1(args_str.encode("UTF-8")).hexdigest()[:16]
             tmp_loc = f"{TMP_LOCATION}/{prefix}_{file_hash}.parquet"
             if path_exists(tmp_loc):
