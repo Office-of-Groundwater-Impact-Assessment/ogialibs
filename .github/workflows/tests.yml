@@ -31,5 +31,9 @@ jobs:
       - name: Check Install
         shell: pwsh
         run: pip install .
+  publish-to-pypi:
+    name: Publish python package to Pypi
+    steps:
       - name: pypi-publish
-        uses: pypa/gh-action-pypi-publish@v1.8.11
+        uses: pypa/gh-action-pypi-publish@v1.8.11      
+      
