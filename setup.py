@@ -11,7 +11,7 @@ setup(
     description=(
         "Common Python methods for OGIA"
         ),
-    long_description=open('README.md').read(),
+    long_description='README.md',
     packages=find_packages(exclude=['sandbox*', 'tests*']),
     include_package_data=True,
     install_requires=[
