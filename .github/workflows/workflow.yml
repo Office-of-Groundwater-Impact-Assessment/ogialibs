@@ -34,7 +34,7 @@ jobs:
   publish-to-pypi:
     name: Publish python package to Pypi
     runs-on: ubuntu-latest
+    needs: pylint-and-tests
     steps:
       - name: pypi-publish
-        uses: pypa/gh-action-pypi-publish@v1.8.11      
-      
+        uses: pypa/gh-action-pypi-publish@v1.8.11    
