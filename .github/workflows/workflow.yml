@@ -1,7 +1,7 @@
 on: [push]
 jobs:
   pylint-and-tests:
-    name: Conda ${{ matrix.python-version }} on ${{ matrix.os }}
+    name: Unit test with ${{ matrix.python-version }} on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
