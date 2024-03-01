@@ -28,6 +28,9 @@ jobs:
     needs: pylint-and-tests
     permissions:
       id-token: write
+    environment:
+      name: pypi
+      url: https://pypi.org/p/ogialibs
     steps:
       - uses: actions/checkout@v4
       - name: Set up Python
@@ -46,4 +49,6 @@ jobs:
       - name: Build a binary wheel and a source tarball
         run: python3 -m build
       - name: pypi-publish
-        uses: pypa/gh-action-pypi-publish@v1.8.11    
+        uses: pypa/gh-action-pypi-publish@release/v1
+
+
