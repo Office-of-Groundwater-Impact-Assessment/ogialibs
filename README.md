@@ -69,3 +69,22 @@ def get_gdf():
     ...
     return gdf
 ```
+
+# Building
+
+Prerequisites;
+- build
+- twine
+- Api keys from PyPi
+- Local configuration file (.pypirc)
+
+
+```
+python -m build
+```
+
+And
+
+```
+twine upload --repository pypi dist/* --config-file .pypirc
+```
