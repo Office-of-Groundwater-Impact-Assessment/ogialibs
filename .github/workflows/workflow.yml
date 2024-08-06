@@ -22,33 +22,5 @@ jobs:
       - name: Unit Tests
         shell: pwsh
         run: python -m unittest discover tests -v
-  publish-to-pypi:
-    name: Publish python package to Pypi
-    runs-on: ubuntu-latest
-    needs: pylint-and-tests
-    permissions:
-      id-token: write
-    environment:
-      name: pypi
-      url: https://pypi.org/p/ogialibs
-    steps:
-      - uses: actions/checkout@v4
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: "3.x"
-      - name: Check Install
-        shell: pwsh
-        run: pip install .
-      - name: Install pypa/build
-        run: >-
-          python3 -m
-          pip install
-          build
-          --user
-      - name: Build a binary wheel and a source tarball
-        run: python3 -m build
-      - name: pypi-publish
-        uses: pypa/gh-action-pypi-publish@release/v1
 
 
